@@ -113,6 +113,35 @@ export default function VoicenuteHomepage() {
     },
   ];
 
+  const pressReleases = [
+    {
+      title: "New Album Release: 'Echoes of Tomorrow'",
+      date: "July 15, 2024",
+      desc: "Official announcement from artist, label, and brand",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA1bdR5u6l-F4L6cOqIB4pGPfMTtClTnJeERrlUZhisAzr_olWcz-9QfeGLLoYjqcytaVphjMjNgtbOu-xgsPDbD-DP4G-myZc7yP_m5K8JhpzP4H3ZOQbrXUBduTe_JzG7ZPBXbDKumQezE8rnjXo2wAIUUFOubKtF44M5fLZMaIIS48NJay1xZtBkV8SHJl8lDHImBrIWZ0tDldmF2pnPn01ZBzSVM5EjeYwMTk-LVErMncY9cSAm-X94dup4Nmw2_ePcQ36lGI3H",
+    },
+    {
+      title: "Artist Collaboration: 'Rhythms Unite'",
+      date: "July 10, 2024",
+      desc: "Official announcement from artist, label, and brand",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAJaBPaLvwePkr2nhSQceTKabFWbwNSx8oOR6IvNUEXDSlcjd_eCtYrj_T33I-LBeeG6VlRHbT9NhHB4fr-cuBiS4GtgcyFSgik250fdUx6knP-O7Zv3jZ-qNqKqhPafBB_Kqx337pMHikKqHDMD8qcldgbmc25eXyAZZxc_cnrMT5iwIKp92qnc5MHzi_AcjiFE4Yc3nocyYAJvMvSSGcttSi7kNH1BkherULnLDBAHfzs-vITZQ2q0Dl9ADamoLKdTojvp0JhZ3rC",
+    },
+    {
+      title: "Brand Partnership: 'Soundscapes'",
+      date: "July 5, 2024",
+      desc: "Official announcement from artist, label, and brand",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzQB8JsTrcLrrJfTeGbQ0sHu3dCc9L6GciWkqHDVQdkOQJaFFkCp-lKRuGGUxMbf4DEZcXXL4PKBEdLcCgp-4vd7gfpDtNCv6qGspNeeNZQTRYDv_pSEAZfsLIsftRd--WVre5JZ0n3y-1BL18OH0tRlrKI8XGsLigEAcLLhOPSgdMeMDP43AZNbiFB9qR8SgCS2Tsw3cdYcVLn5UHC_2AAYofW0bv9VASrOZDJ8z3BV7hpb9Zmp98O0NAd9V0o_tfMP0EvUTpjYix",
+    },
+  ];
+
+  // ✅ Featured press release (single object)
+  const featured = {
+    label: "Official Statement",
+    title: "Artist Announces World Tour",
+    desc: "Details of the upcoming tour, including dates and locations.",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAl_MOnmV38Jppah2CukMA7Be6braRVdILulnZc1UsqKh537HQsIfB1tzSpoYbYTHvh0nz9-KbbWVuZ_BRyexRu-sW_eyTbfJxHQm00kQBxgfRkB0B81paUt2mOzeYGcOmFXnMkILmo6hH2C05ij4wI0b4edpsDs3oVT-a5ThQk8Dr8yloUjPO8oDjzqnEYTVnMrluFZATqnCHQ7zrX4t5dY-VMctbMYimFL4mwYfXLpLYUl_MvT10WQo8w7XHRLMtQJ3TW-AtQV0Zm",
+  };
+
   const trendingTopics = [
     "#BurnaBoy",
     "#Afrobeats2025",
@@ -127,7 +156,6 @@ export default function VoicenuteHomepage() {
   const borderClass = isDarkMode ? "border-gray-700" : "border-gray-200";
 
   const tabs = ["Music", "Videos"];
-
   const content = {
     Music: [
       {
@@ -212,6 +240,9 @@ export default function VoicenuteHomepage() {
               <a href="#" className="hover:text-purple-600 transition">
                 Submit Music & Videos
               </a>
+              <a href="#" className="hover:text-purple-600 transition">
+                Press Releases
+              </a>
             </div>
 
             {/* Right Actions */}
@@ -276,6 +307,9 @@ export default function VoicenuteHomepage() {
               </a>
               <a href="#" className="block py-2 hover:text-purple-600">
                 Submit Songs or Videos
+              </a>
+              <a href="#" className="block py-2 hover:text-purple-600">
+                Press Releases
               </a>
             </div>
           )}
@@ -466,6 +500,65 @@ export default function VoicenuteHomepage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </section>
+
+            {/* Featured Press Release */}
+            <section>
+              <div>
+                {/* Latest Press Releases */}
+                <h2 className="text-black text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                  Latest Press Releases
+                </h2>
+
+                {pressReleases.map((item, i) => (
+                  <div key={i} className="flex gap-4 bg-[#111118] px-4 py-3">
+                    <div
+                      className="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
+                      style={{ backgroundImage: `url(${item.img})` }}
+                    ></div>
+                    <div className="flex flex-1 flex-col justify-center">
+                      <p className="text-white text-base font-medium leading-normal">
+                        {item.title}
+                      </p>
+                      <p className="text-[#9d9db9] text-sm font-normal leading-normal">
+                        {item.date}
+                      </p>
+                      <p className="text-[#9d9db9] text-sm font-normal leading-normal">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Featured Press Release */}
+                <h2 className="text-black text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                  Featured Press Release
+                </h2>
+                <div className="p-4">
+                  <div className="flex items-stretch justify-between gap-4 rounded-lg">
+                    <div className="flex flex-[2_2_0px] flex-col gap-4">
+                      <div className="flex flex-col gap-1">
+                        <p className="text-[#9d9db9] text-sm font-normal leading-normal">
+                          {featured.label}
+                        </p>
+                        <p className="text-black text-base font-bold leading-tight">
+                          {featured.title}
+                        </p>
+                        <p className="text-[#9d9db9] text-sm font-normal leading-normal">
+                          {featured.desc}
+                        </p>
+                      </div>
+                      <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#282839] text-white text-sm font-medium leading-normal w-fit">
+                        <span className="truncate">Read More</span>
+                      </button>
+                    </div>
+                    <div
+                      className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                      style={{ backgroundImage: `url(${featured.img})` }}
+                    ></div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
