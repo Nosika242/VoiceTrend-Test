@@ -1,0 +1,17 @@
+
+@import "tailwindcss";
+
+/* .grid {
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: polysans, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  padding: 1.25rem;
+  column-gap: 10px;
+  row-gap: 30px;
+} */
+
+
+
+/* <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-x-[10px] gap-y-[30px]">  */
